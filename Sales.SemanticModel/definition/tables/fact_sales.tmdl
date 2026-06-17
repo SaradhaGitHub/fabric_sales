@@ -1,0 +1,184 @@
+table fact_sales
+	lineageTag: 6d649ffd-2867-4cbe-bfba-81d9eb1a785e
+	sourceLineageTag: [dbo].[fact_sales]
+
+	column Row_ID
+		dataType: string
+		lineageTag: c1a01e5f-809e-4c2b-a39a-9ffa02039087
+		sourceLineageTag: Row_ID
+		summarizeBy: none
+		sourceColumn: Row_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order_ID
+		dataType: string
+		lineageTag: 0d1bb006-95ba-4b3a-bb54-d64b3f080081
+		sourceLineageTag: Order_ID
+		summarizeBy: none
+		sourceColumn: Order_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_ID
+		dataType: string
+		lineageTag: 8e636522-987f-43c0-9f9c-b2b4e19ce44d
+		sourceLineageTag: Customer_ID
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product_ID
+		dataType: string
+		lineageTag: 1af8891e-cccb-4c18-8a75-b228c19c597b
+		sourceLineageTag: Product_ID
+		summarizeBy: none
+		sourceColumn: Product_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Order_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 1c5a53b6-b52d-4fe6-a390-eba4d653cec6
+		sourceLineageTag: Order_Date
+		summarizeBy: none
+		sourceColumn: Order_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ship_Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d0d51bd0-95fb-4825-9861-5e179db603f3
+		sourceLineageTag: Ship_Date
+		summarizeBy: none
+		sourceColumn: Ship_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ship_Mode
+		dataType: string
+		lineageTag: 5f8166c2-41d4-46f1-90c3-5b8b9b27fbd1
+		sourceLineageTag: Ship_Mode
+		summarizeBy: none
+		sourceColumn: Ship_Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales
+		dataType: double
+		lineageTag: c16fa531-9afd-4a07-8c28-078602a630c6
+		sourceLineageTag: Sales
+		summarizeBy: sum
+		sourceColumn: Sales
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: ce8557c4-8ece-48da-859f-8634c655becd
+		sourceLineageTag: Quantity
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column Discount
+		dataType: double
+		lineageTag: 310d6b30-ec5a-4040-918f-78df0287f5ec
+		sourceLineageTag: Discount
+		summarizeBy: sum
+		sourceColumn: Discount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit
+		dataType: double
+		lineageTag: 65fc9952-d2fc-4fa8-8910-ab83a7ef4f5f
+		sourceLineageTag: Profit
+		summarizeBy: sum
+		sourceColumn: Profit
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Shipping_Cost
+		dataType: double
+		lineageTag: 05e31793-1842-4863-9bd0-48b0b83c72b1
+		sourceLineageTag: Shipping_Cost
+		summarizeBy: sum
+		sourceColumn: Shipping_Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Order_Priority
+		dataType: string
+		lineageTag: c38e9a4c-2da7-4d85-9c59-b394219e181a
+		sourceLineageTag: Order_Priority
+		summarizeBy: none
+		sourceColumn: Order_Priority
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: 2312f9a7-003f-4844-aa71-8f13ce01f4f3
+		sourceLineageTag: Month
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 3836c941-48ca-434f-a95a-8a226fe51e0b
+		sourceLineageTag: Year
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Delivery_Days
+		dataType: string
+		lineageTag: 447cc27f-b2e3-4c1e-a4ea-d5a6d398b9bf
+		sourceLineageTag: Delivery_Days
+		summarizeBy: none
+		sourceColumn: Delivery_Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column Profit_Margin
+		dataType: string
+		lineageTag: 88fb7ef1-a4a9-4cbe-9429-c553d5ce426e
+		sourceLineageTag: Profit_Margin
+		summarizeBy: none
+		sourceColumn: Profit_Margin
+
+		annotation SummarizationSetBy = Automatic
+
+	column Processing_Date
+		dataType: string
+		lineageTag: 360ea11b-76f3-46f8-a43b-076aed1dc409
+		sourceLineageTag: Processing_Date
+		summarizeBy: none
+		sourceColumn: Processing_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_sales = entity
+		mode: directLake
+		source
+			entityName: fact_sales
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sales_LKHS'
+

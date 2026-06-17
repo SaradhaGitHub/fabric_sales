@@ -1,0 +1,92 @@
+table dim_customer
+	lineageTag: ec6a19d5-19a0-46ef-8464-cee5cba46a35
+	sourceLineageTag: [dbo].[dim_customer]
+
+	column Customer_ID
+		dataType: string
+		lineageTag: 17591db9-9195-44fe-a129-e91a2f536557
+		sourceLineageTag: Customer_ID
+		summarizeBy: none
+		sourceColumn: Customer_ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Customer_Name
+		dataType: string
+		lineageTag: d1776f46-ee66-44e1-b7d9-e0560e68fb35
+		sourceLineageTag: Customer_Name
+		summarizeBy: none
+		sourceColumn: Customer_Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segment
+		dataType: string
+		lineageTag: 12c6f295-02cf-45ce-a188-4eada7b9240a
+		sourceLineageTag: Segment
+		summarizeBy: none
+		sourceColumn: Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Postal_Code
+		dataType: string
+		lineageTag: 613eae7a-2ffc-4afb-83df-17f1a27002fc
+		sourceLineageTag: Postal_Code
+		summarizeBy: none
+		sourceColumn: Postal_Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: e8331d5c-293f-4557-be1a-78bcee160ea9
+		sourceLineageTag: City
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: b6c43155-0c7d-4329-9895-4fd24247f832
+		sourceLineageTag: State
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: fbcf34ac-0636-40f8-986c-0ecabbf1409a
+		sourceLineageTag: Country
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 5af4cfca-1c71-4002-9eaf-7af5d65a397c
+		sourceLineageTag: Region
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market
+		dataType: string
+		lineageTag: 5a5cdbf0-76ec-4793-a0fb-09f15468c75d
+		sourceLineageTag: Market
+		summarizeBy: none
+		sourceColumn: Market
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dim_customer = entity
+		mode: directLake
+		source
+			entityName: dim_customer
+			schemaName: dbo
+			expressionSource: 'DirectLake - Sales_LKHS'
+

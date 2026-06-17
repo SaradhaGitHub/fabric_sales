@@ -1,0 +1,8 @@
+relationship 66d966fb-2f57-bb4d-9a55-f11cafa1cbd4
+	fromColumn: fact_sales.Customer_ID
+	toColumn: dim_customer.Customer_ID
+
+relationship e7e4da32-0cbb-7152-5bec-41354d01cc7b
+	fromColumn: fact_sales.Product_ID
+	toColumn: dim_product.Product_ID
+
